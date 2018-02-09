@@ -1,0 +1,16 @@
+*
+!*.*
+!*/
+**/*main.c
+**/*main.py
+*.o
+*.ko
+*.obj
+*.elf
+*~
+*a.out
+*_putchar.c
+*__pycache__
+*.txt
+*.json
+*.csv
