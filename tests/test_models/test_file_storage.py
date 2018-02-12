@@ -8,6 +8,7 @@ import os
 import json
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 from datetime import datetime
 from io import StringIO
 
@@ -27,12 +28,6 @@ class TestFileStorageClass(unittest.TestCase):
         m.save()
         self.assertEqual(True, os.stat('storage.json').st_size != 0)
 
-    def test_save_file_size(self):
-        """tests save method makes non_empty file"""
-        m = BaseModel()
-        m.save()
-        self.assertEqual(True, os.stat('storage.json').st_size != 0)
-
     def test_reload_file_dictionary(self):
         """tests reload method returns dictionary"""
         m = BaseModel()
@@ -42,9 +37,11 @@ class TestFileStorageClass(unittest.TestCase):
 
     def test_reload_file_dictionary_objects(self):
         """tests reload method returns dictionary of objects"""
+        os.remove('storage.json')
         m = BaseModel()
         m.save()
         all_objs = storage.all()
         for obj_key in all_objs.keys():
             obj = all_objs[obj_key]
-            self.assertEqual(type(obj), type(m))
+            break
+        self.assertEqual(type(obj), type(m))
