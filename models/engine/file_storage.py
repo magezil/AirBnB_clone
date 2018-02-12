@@ -2,7 +2,9 @@
 import json
 from models.base_model import BaseModel
 
+
 cls_dict = {"BaseModel": BaseModel}
+
 
 class FileStorage:
     """serializes instances -> json file and deserializes
@@ -21,7 +23,7 @@ class FileStorage:
         """
         if obj:
             self.__objects["{}.{}".format(str(type(obj).__name__),
-                                      obj.id)] = obj
+                                          obj.id)] = obj
 
     def save(self):
         """serializes __objects to __file_path"""
