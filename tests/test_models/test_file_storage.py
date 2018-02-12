@@ -14,7 +14,7 @@ from io import StringIO
 
 
 class TestFileStorageClass(unittest.TestCase):
-    """class TestBaseClass"""
+    """class TestFileStorageClass"""
 
     def test_save_file(self):
         """tests save method makes file"""

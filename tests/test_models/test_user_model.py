@@ -14,7 +14,7 @@ from io import StringIO
 
 
 class TestUserClass(unittest.TestCase):
-    """class TestBaseClass"""
+    """class TestUserClass"""
 
     def test_user_type(self):
         """tests user instance is created"""

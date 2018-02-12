@@ -2,9 +2,10 @@
 import json
 from models.base_model import BaseModel
 from models.user import User
-
+from models.state import State
 cls_dict = {"BaseModel": BaseModel,
-            "User": User}
+            "User": User,
+            "State": State}
 
 
 class FileStorage:
