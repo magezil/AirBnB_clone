@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 import json
-import sys
+from models.base_model import BaseModel
+
+
+cls_dict = {"BaseModel": BaseModel}
+
 
 class FileStorage:
-    """serializes and deserializes instances from json file"""
+    """serializes instances -> json file and deserializes
+    json fle -> instances"""
 
-    def __init__(self):
-        """initializes file path and objects"""
-        self.__file_path = "storage.json"
-        self.__objects = {}
+    __file_path = "storage.json"
+    __objects = {}
 
     def all(self):
         """returns dictionary __objects"""
@@ -18,17 +21,25 @@ class FileStorage:
         """Args:
                 obj: object
         """
-        self.__objects["{}.{}".format(type(obj), obj.id)] = obj
+        if obj:
+            self.__objects["{}.{}".format(str(type(obj).__name__),
+                                          obj.id)] = obj
 
     def save(self):
         """serializes __objects to __file_path"""
+        obj_dict = {}
+        for k in self.__objects:
+            obj_dict[k] = self.__objects[k].to_dict()
         with open(self.__file_path, 'w') as f:
-            f.write(json.dump(self.__objects))
+            json.dump(obj_dict, f)
 
     def reload(self):
         """deserializes __objects from __file_path"""
         try:
             with open(self.__file_path) as f:
-                json.loads(f.read())
+                obj = json.load(f)
+            for obj_id in obj:
+                self.__objects[obj_id] = cls_dict[obj[obj_id]
+                                                  ['__class__']](**obj[obj_id])
         except FileNotFoundError:
             pass

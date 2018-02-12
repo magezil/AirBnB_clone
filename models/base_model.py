@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from datetime import datetime
 import uuid
+import models
 
 
 class BaseModel:
@@ -17,10 +18,10 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
         else:
             for k, v in kwargs.items():
-                print("key: ", k, "value: ", v)
                 if k == "created_at":
                     self.created_at = datetime.strptime(v,
                                                         "%Y-%m-%dT%H:%M:%S.%f")
@@ -38,6 +39,7 @@ class BaseModel:
     def save(self):
         """updates the updated_at attr w/ current datetime"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary representation of __dict__
