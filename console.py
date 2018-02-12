@@ -101,6 +101,7 @@ class HBNBCommand(cmd.Cmd):
         """Empty line should do nothing"""
         return
 
+
 def parse(arg):
     """Convert a series of arguments into argument tuple"""
     return tuple(map(int, arg.split()))
