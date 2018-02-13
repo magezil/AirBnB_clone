@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-   unittest suite for model/engine/file_storage.py
+   unittest suite for model/user.py
 """
 import unittest
 import sys
