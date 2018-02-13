@@ -35,6 +35,11 @@ class BaseModel:
         return "[{}] ({}) {}".format(str(type(self).__name__), self.id,
                                      str(self.__dict__))
 
+    def __repr__(self):
+        """returns object representation"""
+        return "[{}] ({}) {}".format(str(type(self).__name__), self.id,
+                                     str(self.__dict__))
+
     def save(self):
         """updates the updated_at attr w/ current datetime"""
         self.updated_at = datetime.now()
