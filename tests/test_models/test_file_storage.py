@@ -37,11 +37,10 @@ class TestFileStorageClass(unittest.TestCase):
 
     def test_reload_file_dictionary_objects(self):
         """tests reload method returns dictionary of objects"""
-        os.remove('storage.json')
         m = BaseModel()
         m.save()
         all_objs = storage.all()
         for obj_key in all_objs.keys():
             obj = all_objs[obj_key]
             break
-        self.assertEqual(type(obj), type(m))
+        self.assertEqual(True, issubclass(type(obj), type(BaseModel())))
