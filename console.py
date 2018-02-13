@@ -37,11 +37,21 @@ class HBNBCommand(cmd.Cmd):
 
         Prints '** class name missing **' if no class name is given
         Prints '** class doesn't exist **' if class name doesn't exist
+        Prints '** instance id missing **' if instance id missing
+        Prints '** no instance found **' if instance of class does not exist 
         """
         if not arg:
             print('** class name missing **')
             return
+        args = arg.split(" ")
         objs = storage.all()
+        if args[0] == "BaseModel":
+            if len(args) != 2:
+                print("** instance id missing **")
+            if ("BaseModel." + args[1]) not in objs:
+                print("** no instance found **")
+            else:
+                print(objs["BaseModel." + args[1]])
 
     def do_destroy(self, arg):
         """Destroy command to delete an instance based on a class name and id
@@ -49,8 +59,25 @@ class HBNBCommand(cmd.Cmd):
 
         Usage:
             $ destroy BaseModel 1234-1234-1234
+
+        Prints '** class name missing **' if no class name is given
+        Prints '** class doesn't exist **' if class name doesn't exist
+        Prints '** instance id missing **' if instance id missing
+        Prints '** no instance found **' if instance of class does not exist 
         """
-        pass
+        if not arg:
+            print('** class name missing **')
+            return
+        args = arg.split(" ")
+        objs = storage.all()
+        if args[0] == "BaseModel":
+            if len(args) != 2:
+                print("** instance id missing **")
+            if ("BaseModel." + args[1]) not in objs:
+                print("** no instance found **")
+            else:
+                del objs["BaseModel." + args[1]]
+                storage.save()
 
     def do_all(self, arg):
         """All command to print all instances based on a class name or
@@ -100,11 +127,6 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Empty line should do nothing"""
         return
-
-
-def parse(arg):
-    """Convert a series of arguments into argument tuple"""
-    return tuple(map(int, arg.split()))
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
