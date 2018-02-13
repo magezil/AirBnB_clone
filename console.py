@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         if args[0] == "BaseModel":
             if len(args) != 2:
                 print("** instance id missing **")
-            if ("BaseModel." + args[1]) not in objs:
+            elif ("BaseModel." + args[1]) not in objs:
                 print("** no instance found **")
             else:
                 print(objs["BaseModel." + args[1]])
@@ -94,9 +94,10 @@ class HBNBCommand(cmd.Cmd):
                 ins.append(objs[o])
             print(ins)
             return
-        if arg == "BaseModel":
+        args = arg.split(" ")
+        if args[0] == "BaseModel":
             for o in objs:
-                if o.__name__ == arg:
+                if o[0:len("BaseModel")] == args[0]:
                     ins.append(objs[o])
             print(ins)
         else:
