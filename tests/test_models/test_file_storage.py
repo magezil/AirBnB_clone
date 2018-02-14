@@ -20,13 +20,13 @@ class TestFileStorageClass(unittest.TestCase):
         """tests save method makes file"""
         m = BaseModel()
         m.save()
-        self.assertEqual(True, os.path.isfile('storage.json'))
+        self.assertEqual(True, os.path.isfile('file.json'))
 
     def test_save_file_size(self):
         """tests save method makes non_empty file"""
         m = BaseModel()
         m.save()
-        self.assertEqual(True, os.stat('storage.json').st_size != 0)
+        self.assertEqual(True, os.stat('file.json').st_size != 0)
 
     def test_reload_file_dictionary(self):
         """tests reload method returns dictionary"""
