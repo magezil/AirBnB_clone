@@ -4,12 +4,19 @@ import cmd
 from shlex import split
 from datetime import datetime
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand inherits from cmd.Cmd"""
     prompt = '(hbnb) '
+    classes = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
 
     def do_create(self, arg):
         """Create command to create a new instance of BaseModel
@@ -24,8 +31,10 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print('** class name missing **')
             return
-        if arg == "BaseModel":
-            new_model = BaseModel()
+
+        args = arg.split(" ")
+        if args[0] in self.classes:
+            new_model = eval("{}()".format(args[0]))
             new_model.save()
             print("{}".format(new_model.id))
         else:
@@ -83,9 +92,9 @@ class HBNBCommand(cmd.Cmd):
             print(ins)
             return
         args = arg.split(" ")
-        if args[0] == "BaseModel":
+        if args[0] in self.classes:
             for o in objs:
-                if o[0:len("BaseModel")] == args[0]:
+                if o[0:len(args[0])] == args[0]:
                     ins.append(objs[o])
             print(ins)
         else:
@@ -115,7 +124,6 @@ class HBNBCommand(cmd.Cmd):
             elif len(args) < 4:
                 print('** value missing **')
             elif args[2] not in protected:
-                # args[2] = attribute, args[3] = value
                 obj.__dict__[args[2]] = args[3]
                 obj.updated_at = datetime.now()
                 storage.save()
@@ -145,13 +153,15 @@ class HBNBCommand(cmd.Cmd):
             return
         args = arg.split(" ")
         objs = storage.all()
-        if args[0] == "BaseModel":
+        if args[0] in self.classes:
             if len(args) < 2:
                 print("** instance id missing **")
-            elif ("BaseModel." + args[1]) not in objs:
+                return
+            obj_name = args[0] + "." + args[1]
+            if obj_name not in objs:
                 print("** no instance found **")
             else:
-                return objs["BaseModel." + args[1]]
+                return objs[obj_name]
         else:
             print("** class doesn't exist **")
 
