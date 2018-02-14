@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+   Definition of User Class
+"""
 from models.base_model import BaseModel
 
 
