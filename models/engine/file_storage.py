@@ -42,13 +42,13 @@ class FileStorage:
         obj_dict = {}
         for k in self.__objects:
             obj_dict[k] = self.__objects[k].to_dict()
-        with open(self.__file_path, 'w') as f:
+        with open(self.__file_path, 'w', encoding="UTF-8") as f:
             json.dump(obj_dict, f)
 
     def reload(self):
         """deserializes __objects from __file_path"""
         try:
-            with open(self.__file_path) as f:
+            with open(self.__file_path, encoding="UTF-8") as f:
                 obj = json.load(f)
             for obj_id in obj:
                 self.__objects[obj_id] = cls_dict[obj[obj_id]
