@@ -9,7 +9,7 @@ from datetime import datetime
 from io import StringIO
 
 
-class TestBaseClass(unittest.TestCase):
+class TestBaseModel(unittest.TestCase):
     """class TestBaseClass"""
 
     def test_id(self):
