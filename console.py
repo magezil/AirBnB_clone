@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module contains the entry point of the command interpreter"""
 import cmd
+from shlex import split
 from datetime import datetime
 from models.base_model import BaseModel
 from models import storage
@@ -41,7 +42,7 @@ class HBNBCommand(cmd.Cmd):
             '** class name missing **' if no class name is given
             '** class doesn't exist **' if class name doesn't exist
             '** instance id missing **' if instance id missing
-            '** no instance found **' if instance of class does not exist 
+            '** no instance found **' if instance of class does not exist
         """
         obj = self.find_obj(arg)
         if obj:
@@ -58,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
             '** class name missing **' if no class name is given
             '** class doesn't exist **' if class name doesn't exist
             '** instance id missing **' if instance id missing
-            '** no instance found **' if instance of class does not exist 
+            '** no instance found **' if instance of class does not exist
         """
         obj = self.find_obj(arg)
         if obj:
@@ -100,22 +101,21 @@ class HBNBCommand(cmd.Cmd):
             '** class name missing **' if no class name is given
             '** class doesn't exist **' if class name doesn't exist
             '** instance id missing **' if instance id missing
-            '** no instance found **' if instance of class does not exist 
+            '** no instance found **' if instance of class does not exist
             '** attribute name missing **' if attribute name is missing
             '** value missing **' if value for attribute name is missing
         """
         obj = self.find_obj(arg)
+        protected = ["id", "created_at", "updated_at"]
         if obj:
-            args = arg.split(" ")
+            args = split(arg, " ")
             objs = storage.all()
             if len(args) < 3:
                 print('** attribute name missing **')
             elif len(args) < 4:
                 print('** value missing **')
-            elif args[2] != "id" and args[2] != "created_at" and args[2] != "updated_at":
+            elif args[2] not in protected:
                 # args[2] = attribute, args[3] = value
-                print(args[3])
-    #            if args[2] in obj:
                 obj.__dict__[args[2]] = args[3]
                 obj.updated_at = datetime.now()
                 storage.save()
