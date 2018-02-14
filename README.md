@@ -1,7 +1,17 @@
+<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/263/HBTN-hbnb-Final.png" style="height:15%;width:15%" />
+
 # Overview
 
 The beginning of a multi-part Airbnb clone project which are creates a copy of [Airbnb](https://www.airbnb.com/). We have created a console that allows for the creation and manipulation of objects in a user-friendly interface.
 
+## Getting Started:
+The first step to running the console requires a cloning of the repository which can be done in the following way:
+
+`$ git clone https://github.com/dparha/AirBnB_clone.git`
+
+Once cloned, to run the program type:
+
+`$ ./console`
 
 ## Features
 
