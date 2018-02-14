@@ -78,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """All command to print all instances based on a class name or
-        all vc
+        all classes if none specified
 
         Usage:
             $ all BaseModel
