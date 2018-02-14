@@ -114,9 +114,10 @@ class HBNBCommand(cmd.Cmd):
                 print('** value missing **')
             elif args[2] != "id" and args[2] != "created_at" and args[2] != "updated_at":
                 # args[2] = attribute, args[3] = value
+                print(args[3])
     #            if args[2] in obj:
                 obj.__dict__[args[2]] = args[3]
-                self.updated_at = datetime.now()
+                obj.updated_at = datetime.now()
                 storage.save()
 
     def do_quit(self, arg):
