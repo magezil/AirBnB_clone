@@ -16,7 +16,7 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand inherits from cmd.Cmd"""
     prompt = '(hbnb) '
-    classes = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
+    vc = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
 
     def do_create(self, arg):
         """Create command to create a new instance of BaseModel
@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         args = arg.split(" ")
-        if args[0] in self.classes:
+        if args[0] in self.vc:
             new_model = eval("{}()".format(args[0]))
             new_model.save()
             print("{}".format(new_model.id))
@@ -78,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """All command to print all instances based on a class name or
-        all classes
+        all vc
 
         Usage:
             $ all BaseModel
@@ -92,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
             print(ins)
             return
         args = arg.split(" ")
-        if args[0] in self.classes:
+        if args[0] in self.vc:
             for o in objs:
                 if o[0:len(args[0])] == args[0]:
                     ins.append(objs[o])
@@ -153,7 +153,7 @@ class HBNBCommand(cmd.Cmd):
             return
         args = arg.split(" ")
         objs = storage.all()
-        if args[0] in self.classes:
+        if args[0] in self.vc:
             if len(args) < 2:
                 print("** instance id missing **")
                 return
