@@ -3,9 +3,9 @@
    unittest suite console.py
 """
 import unittest
-from console import HBNBConsole
+from console import HBNBCommand
 
 
-class TestConsole(unittest.TestCasae):
-    """class TestConsole"""
+class TestHBNBCommand(unittest.TestCase):
+    """class TestHBNBCommand"""
     pass
