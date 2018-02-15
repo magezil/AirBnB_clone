@@ -5,6 +5,7 @@
 import unittest
 from console import HBNBConsole
 
+
 class TestConsole(unittest.TestCasae):
     """class TestConsole"""
     pass
