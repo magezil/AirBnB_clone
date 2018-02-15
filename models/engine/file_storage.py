@@ -36,7 +36,7 @@ class FileStorage:
             with open(self.__file_path, encoding="UTF-8") as f:
                 obj = json.load(f)
             for obj_id in obj:
-                self.__objects[obj_id] = models.cls_dict[obj[obj_id]
-                                                  ['__class__']](**obj[obj_id])
+                val = models.cls_dict[obj[obj_id]['__class__']](**obj[obj_id])
+                self.__objects[obj_id] = val
         except FileNotFoundError:
             pass
