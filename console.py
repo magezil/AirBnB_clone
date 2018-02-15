@@ -10,13 +10,13 @@ from models.city import City
 from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
-from models import storage
+from models import storage, cls_dict
 
 
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand inherits from cmd.Cmd"""
     prompt = '(hbnb) '
-    vc = ['BaseModel', 'User', 'Place', 'State', 'City', 'Amenity', 'Review']
+    vc = cls_dict
 
     def do_create(self, arg):
         """Create command to create a new instance of BaseModel
