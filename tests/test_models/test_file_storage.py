@@ -28,14 +28,14 @@ class TestFileStorageClass(unittest.TestCase):
         m.save()
         self.assertEqual(True, os.stat('file.json').st_size != 0)
 
-    def test_reload_file_dictionary(self):
-        """tests reload method returns dictionary"""
+    def test_all_file_dictionary(self):
+        """tests all method returns dictionary"""
         m = BaseModel()
         m.save()
         obj = storage.all()
         self.assertEqual(dict, type(obj))
 
-    def test_reload_file_dictionary_objects(self):
+    def test_all_file_dictionary_objects(self):
         """tests reload method returns dictionary of objects"""
         m = BaseModel()
         m.save()
@@ -45,7 +45,27 @@ class TestFileStorageClass(unittest.TestCase):
             break
         self.assertEqual(True, issubclass(type(obj), type(BaseModel())))
 
+    def test_reload_file_dictionary(self):
+        """tests reload method returns dictionary"""
+        m = BaseModel()
+        m.save()
+        storage.reload()
+        obj = storage.all()
+        self.assertEqual(dict, type(obj))
+
+    def test_reload_file_dictionary_objects(self):
+        """tests reload method returns dictionary of objects"""
+        m = BaseModel()
+        m.save()
+        storage.reload()
+        all_objs = storage.all()
+        for obj_key in all_objs.keys():
+            obj = all_objs[obj_key]
+            break
+        self.assertEqual(True, issubclass(type(obj), type(BaseModel())))
+
     def test_new(self):
+        """tests new method adds new obj to dictionary"""
         m = BaseModel()
         storage.new(m)
         obj = storage.all()
