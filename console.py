@@ -146,6 +146,19 @@ class HBNBCommand(cmd.Cmd):
         """Empty line should do nothing"""
         return
 
+    def count(self, arg):
+        """Counts the number of instances of a class"""
+        objs = storage.all()
+        ins = []
+        count = 0
+        if arg in self.vc:
+            for o in objs:
+                if o[0:len(arg)] == arg:
+                    count += 1
+            print(count)
+        else:
+            print("** class doesn't exist **")
+
     def default(self, line):
         """Defines action to happen if command prefix is not recognized.
         Overridden to allow calls such as:
@@ -155,6 +168,8 @@ class HBNBCommand(cmd.Cmd):
         if len(command) >= 2:
             if command[1][:-2] == "all":
                 self.do_all(command[0])
+            elif command[1][:-2] == "count":
+                self.count(command[0])
         else:
             cmd.Cmd.default(self, line)
 
