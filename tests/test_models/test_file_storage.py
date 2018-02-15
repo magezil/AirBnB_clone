@@ -44,3 +44,9 @@ class TestFileStorageClass(unittest.TestCase):
             obj = all_objs[obj_key]
             break
         self.assertEqual(True, issubclass(type(obj), type(BaseModel())))
+
+    def test_new(self):
+        m = BaseModel()
+        storage.new(m)
+        obj = storage.all()
+        self.assertEqual(obj["{}.{}".format("BaseModel", m.id)], m)
