@@ -25,8 +25,8 @@ class FileStorage:
     def save(self):
         """serializes __objects to __file_path"""
         obj_dict = {}
-        for k in self.__objects:
-            obj_dict[k] = self.__objects[k].to_dict()
+        for k, v in self.__objects.items():
+            obj_dict[k] = v.to_dict()
         with open(self.__file_path, 'w', encoding="UTF-8") as f:
             json.dump(obj_dict, f)
 
@@ -35,8 +35,8 @@ class FileStorage:
         try:
             with open(self.__file_path, encoding="UTF-8") as f:
                 obj = json.load(f)
-            for obj_id in obj:
-                val = models.cls_dict[obj[obj_id]['__class__']](**obj[obj_id])
+            for obj_id, dictionary in obj.items():
+                val = models.cls_dict[dictionary['__class__']](**dictionary)
                 self.__objects[obj_id] = val
         except FileNotFoundError:
             pass
