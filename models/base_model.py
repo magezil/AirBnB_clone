@@ -20,11 +20,11 @@ class BaseModel:
             models.storage.new(self)
 
         else:
-            for k, v in kwargs.items():
-                if k == "created_at" or k == "updated_at":
-                    v = datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f")
-                if k != "__class__":
-                    setattr(self, k, v)
+            for attr_name, attr in kwargs.items():
+                if attr_name == "created_at" or attr_name == "updated_at":
+                    attr = datetime.strptime(attr, "%Y-%m-%dT%H:%M:%S.%f")
+                if attr_name != "__class__":
+                    setattr(self, attr_name, attr)
 
     def __str__(self):
         """returns str representation"""
