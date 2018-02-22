@@ -8,5 +8,8 @@
 * Build on base HTML page using the `style` tag
 
 ### 2-index.html, styles/2-common.css, styles/2-header.css, styles/2-footer.css
-* Build on the base HTML page using 2 CSS files instead of styling in HTML
+* Build on the base HTML page using 3 CSS files instead of styling in HTML
 
+### 3-index.html, styles/3-common.css, styles/3-header.css, styles/3-footer.css, images/
+* Build on previous HTML and CSS files to add more to the layout
+* Add `images` directory to store images and logos for project
