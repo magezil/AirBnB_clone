@@ -23,6 +23,7 @@ button:hover {
 	opacity: 0.9;
 }
 .filters div {
+	display: inline-block;
 	height: 100%;
 	width: 25%;
 }
