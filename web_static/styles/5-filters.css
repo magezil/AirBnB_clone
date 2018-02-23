@@ -26,6 +26,8 @@ button:hover {
 	display: inline-block;
 	height: 100%;
 	width: 25%;
+	position: absolute;
+	top: 50%;
 }
 div .locations {
 	border-right: 1px solid #DDDDDD;
