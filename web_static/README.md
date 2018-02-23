@@ -20,8 +20,12 @@
 
 ### Search
 * Files: 4-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/4-filters.css, images/
-* Build on previous HTML and CSS files to add a filters box with a serach button
+* Build on previous HTML and CSS files to add a filters box with a search button
 
 ### Filters
 * Files: 5-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/5-filters.css, images/
+* Add states and amenities filters
 
+### Add hover effects to filters
+* Files: 6-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, images/
+* Add hover effects to list options for states and amenities
