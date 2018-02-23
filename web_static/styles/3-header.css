@@ -6,7 +6,7 @@ header {
 }
 
 header .logo {
-	background: url("logo.png") no-repeat;
+	background: url("https://github.com/magezil/AirBnB_clone/blob/master/web_static/images/logo.png") no-repeat;
 	margin-left: 20px;
 	height: 100%;
 }
