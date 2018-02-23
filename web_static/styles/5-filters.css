@@ -22,17 +22,17 @@ button {
 button:hover {
 	opacity: 0.9;
 }
-div {
+.filters div {
 	height: 100%;
 	width: 25%;
 }
 div .locations {
 	border-right: 1px solid #DDDDDD;
 }
-div h3 {
+.filters div h3 {
 	font-weight: 600;
 }
-div h4 {
+.filters div h4 {
 	font-weight: 400;
 	font-size: 14px;
 }
