@@ -13,3 +13,7 @@
 ### 3-index.html, styles/3-common.css, styles/3-header.css, styles/3-footer.css, images/
 * Build on previous HTML and CSS files to add more to the layout
 * Add `images` directory to store images and logos for project
+
+### 4-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/4-filters.css, images/
+* Build on previous HTML and CSS files to add a filters box with a serach button
+
