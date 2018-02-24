@@ -55,9 +55,7 @@ button:hover {
 .popover ul {
 	list-style-type: none;
 }
+.amenity:hover .popover,
 .locations:hover .popover {
-	visibility: visible;
-}
-.amenity:hover .popover {
 	visibility: visible;
 }
