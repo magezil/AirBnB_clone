@@ -43,7 +43,7 @@ button:hover {
 	font-size: 14px;
 	margin-top: 0;
 }
-.popover div {
+.popover {
 	visibility: hidden;
 	width: 100%;
 	background-color: #FAFAFA;
