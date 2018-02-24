@@ -27,8 +27,6 @@ button:hover {
 	height: 100%;
 	width: 25%;
 	position: relative;
-	top: 50%;
-	margin-top: -50%;
 }
 .filters h3, h4 {
 	margin-left: 15%;
@@ -53,7 +51,7 @@ button:hover {
 .popover ul {
 	list-style-type: none;
 }
-.popover:hover {
+.filters:hover .popover {
 	visibility: visible;
 	background-color: #FAFAFA;
 	border: 1px solid #DDDDDD;
