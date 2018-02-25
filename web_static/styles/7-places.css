@@ -7,11 +7,11 @@
 	border: 1px solid #FF5A5F;
 	border-radius: 4px;
 }
-.two {
+.two article {
 	margin: 20px;
 	display: inline-block;
 }
-.center {
+.center article {
 	margin: 20px auto;
 }
 .places h2 {
