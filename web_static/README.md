@@ -34,3 +34,7 @@
 * Files: 7-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/7-places.css, images/
 * Add a Places section that shows names of places
 
+### Add more details to results
+* Files: 8-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/8-places.css, images/
+* Add more information to a Place, including price, information, user, and a description
+
