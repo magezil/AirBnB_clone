@@ -29,3 +29,8 @@
 ### Add hover effects to filters
 * Files: 6-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, images/
 * Add hover effects to list options for states and amenities
+
+### Place results
+* Files: 7-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/7-places.css, images/
+* Add a Places section that shows names of places
+
