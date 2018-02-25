@@ -33,6 +33,9 @@
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 }
+.information, .max_guest, .number_rooms, .number_bathrooms {
+	font-size: 20px;
+}
 .max_guest, .number_rooms, .number_bathrooms {
 	width: 100px;
 	display: inline-block;
