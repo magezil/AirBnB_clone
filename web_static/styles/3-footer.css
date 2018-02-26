@@ -9,3 +9,6 @@ footer {
 	width: 100%;
 	border-top: 1px solid #CCCCCC;
 }
+footer .p {
+	top: 10%;
+}
