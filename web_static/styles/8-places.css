@@ -41,11 +41,6 @@
 	width: 100px;
 	display: inline-block;
 }
-.max_guest p,
-.number_rooms p,
-.number_bathrooms p {
-	transform: translateY(-100%);
-}
 .max_guest {
 	background: url('../images/icon_group.png') no-repeat;
 }
