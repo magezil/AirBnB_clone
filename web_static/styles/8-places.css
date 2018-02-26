@@ -1,6 +1,8 @@
 .places {
 	font-size: 30px;
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
 .places article {
 	width: 390px;
@@ -9,10 +11,8 @@
 	border-radius: 4px;
 	flex-direction: row;
 	justify-content: center;
-	flex-wrap: wrap;
 }
 .places h2 {
-	flex-direction: column;
 	font-size: 30px;
 	text-align: center;
 	margin-top: 0;
