@@ -1,7 +1,7 @@
 .places h1 {
 	font-size: 30px;
 }
-.results{
+.results {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -10,6 +10,7 @@
 .places article {
 	width: 390px;
 	padding: 20px;
+	margin: 20px;
 	border: 1px solid #FF5A5F;
 	border-radius: 4px;
 }
@@ -17,20 +18,22 @@
 	font-size: 30px;
 	text-align: center;
 	margin-top: 0;
-	float: right;
 }
 .result_head {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 .price_by_night {
-	justify-content: flex-end;
 	color: #FF5A5F;
 	border: 4px solid #FF5A5F;
 	border-radius: 50%;
 	min-width: 60px;
 	height: 60px;
 	font-size: 30px;
+}
+.price_by_night p {
+	margin-top: -20px;
 }
 .information {
 	height: 80px;
