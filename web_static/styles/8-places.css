@@ -33,7 +33,8 @@
 	font-size: 30px;
 }
 .price_by_night p {
-	margin-top: -20px;
+	margin-top: 15px;
+	margin-right: 4px;
 }
 .information {
 	height: 80px;
@@ -41,6 +42,8 @@
 	border-bottom: 1px solid #DDD;
 	display: flex;
 	justify-content: center;
+}
+.information p {
 	font-size: 20px;
 }
 .max_guest, .number_rooms, .number_bathrooms {
