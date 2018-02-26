@@ -1,27 +1,21 @@
 .places {
 	font-size: 30px;
+	display: flex;
+	justify-content: center;
 }
 .places article {
 	width: 390px;
 	padding: 20px;
 	border: 1px solid #FF5A5F;
 	border-radius: 4px;
-}
-.two article {
-	margin: 20px;
-	display: inline-block;
-}
-.center article {
-	margin: 20px auto;
+	justify-content: space-around;
 }
 .places h2 {
 	font-size: 30px;
 	text-align: center;
 	margin-top: 0;
-	display: inline-block;
 }
 .price_by_night {
-	display: inline-block;
 	color: #FF5A5F;
 	border: 4px solid #FF5A5F;
 	border-radius: 50%;
@@ -34,12 +28,13 @@
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 }
-.information, .max_guest, .number_rooms, .number_bathrooms {
+.information, .max_guest,
+.number_rooms, .number_bathrooms,
+.user, .description {
 	font-size: 20px;
 }
 .max_guest, .number_rooms, .number_bathrooms {
 	width: 100px;
-	display: inline-block;
 }
 .max_guest {
 	background: url('../images/icon_group.png') no-repeat;
