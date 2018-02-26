@@ -17,6 +17,11 @@
 	font-size: 30px;
 	text-align: center;
 	margin-top: 0;
+	float: right;
+}
+.result_head {
+	display: flex;
+	flex-direction: row;
 }
 .price_by_night {
 	justify-content: flex-end;
