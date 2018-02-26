@@ -45,6 +45,7 @@
 }
 .information p {
 	font-size: 20px;
+	padding-top: 20px;
 }
 .max_guest, .number_rooms, .number_bathrooms {
 	width: 100px;
